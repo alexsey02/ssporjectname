@@ -1,0 +1,10 @@
+﻿<!DOCTYPE HTML>
+@{ 
+    ViewBag.Title = "Административная зона";
+}
+<h1>Админ зона</h1>
+<div>
+    @Html.ActionLink("Администратор страниц", "Index", "Home", new { area = "Admin"}, new { @class = "btn btn-info" })
+    @Html.ActionLink("Отдел СМИ", "Index", "Home", new { area = "OtdelSMI" }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Зона куратора", "Index", "Home", new { area = "Curator" }, new { @class = "btn btn-info" })
+</div>

@@ -1,0 +1,6 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/main.css",//файл для входных и выходных файлов
+    "inputFile": "wwwroot/sass/main.scss"
+  }
+]

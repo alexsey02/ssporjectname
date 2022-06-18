@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Подача заявления";
+}
+<form asp-action="Index" method="post">
+    <div class="div-box">
+        <h2><label>Введите почту</label></h2>
+        <input id="email" name="email" type="email" placeholder="Используйте домен МПТ" />
+    </div>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+    <div class="div-box">
+        <h2><label>Расскажите информацию о себе </label></h2>
+        <textarea cols="70" rows="5" maxlength="100" name="boxAp"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Отправить заявку" class="btn btn-info" />
+    </div>
+</form>

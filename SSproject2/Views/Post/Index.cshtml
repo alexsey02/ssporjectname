@@ -1,0 +1,31 @@
+﻿@model IQueryable<PostItem>//Объявление наследования модели
+@{
+    TextFiled textField = ViewBag.TextField;
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Title = "Наши посты";
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
+}
+
+<div>
+    @if (Model.Any())
+    {
+        @foreach (PostItem entity in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <a asp-area="" asp-controller="Post" asp-action="Index" asp-route-id="@entity.ID">
+                    <img src="~/images/@entity.TitleImagePath" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <p class="card-text">Информация о посте</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">@entity.Title</li>
+                    <li class="list-group-item">@entity.Subtitle</li>
+                </ul>
+            </div>
+            <hr />
+        }
+
+    }
+</div>

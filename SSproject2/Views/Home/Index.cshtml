@@ -1,0 +1,9 @@
+﻿@model TextFiled//Объявление наследования модели
+@{
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+    ViewBag.Title = "Главная страница";
+}
+<div>
+    @Html.Raw(Model.Text)
+</div>

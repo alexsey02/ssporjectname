@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SSproject2.Domain.Entities.Application>//объявление наследуемой модели
+@{
+    ViewBag.Title = "Куратор";
+}
+<table class="table table-bordered border-primary caption-top ">
+    <caption>Таблица заявок</caption>
+    <tr class="table-primary"><th hidden="hidden">Персональный номер</th><th>Почта заявки</th><th>Текст заявки</th><th>Статус заявки</th><th>Персональный номер заявки</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr class="table-primary"><td class="table-primary" hidden="hidden">@item.ID</td><td class="table-primary">@item.mail</td><td class="table-primary">@item.AppText</td><td class="table-primary">@item.AppStatus</td><td class="table-primary">@item.AppNumber</td></tr>
+    }
+</table>
+<div class="div-box">
+    <a class="btn btn-primary stretched-link" asp-area="Curator" asp-controller="Home" asp-action="ExportApp">Экспортировать</a>
+</div>
+<div class="div-box">
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+        <input type="submit" value="Выйти" class="btn btn-info" />
+    </form>
+</div>
+@foreach (Application entity in Model)
+{
+    <div class="alert alert-info" role="alert">
+        <h2><label>Персональный номер заявки:@($"{entity.AppNumber}")</label></h2> <a class="btn btn-primary stretched-link" asp-area="Curator" asp-controller="Apllication" asp-action="Edit" asp-route-id="@entity.ID">редактировать</a>
+    </div>
+}
+

@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = .NETCoreApp,Version=v5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = SSproject2Tests3
+build_property.ProjectDir = C:\Users\Brux\Desktop\SSproject2\SSproject2Tests3\

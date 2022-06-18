@@ -1,0 +1,32 @@
+﻿@model SSproject2.Domain.Entities.Application//объявление наследуемой модели
+@{
+    string strTitle = "Редактировать заявку";
+    ViewBag.Title = strTitle;
+}
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        <form asp-area="Curator" asp-controller="Apllication" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="ID" />
+            <input type="hidden" asp-for="AppNumber" />
+            <div asp-validation-summary="All"></div>
+            <div class="div-box">
+                <h2><label asp-for="mail"></label></h2>
+                <input asp-for="mail" readonly="readonly"/>
+                <span asp-validation-for="mail"></span>
+            </div>
+            <div class="div-box">
+                <h2><label asp-for="AppText"></label></h2>
+                <input asp-for="AppText" readonly="readonly" />
+                <span asp-validation-for="AppText"></span>
+            </div>
+            <div class="div-box">
+                <label>В случае верности заявки ввести статус Passed</label>
+                <h2> <label asp-for="AppStatus"></label></h2>
+                <input asp-for="AppStatus" />
+                <span asp-validation-for="AppStatus"></span>
+            </div>
+            <input type="submit" value="Сохранить" class="btn btn-info" id="btnAssept" />
+        </form>
+    </div>
+</div>

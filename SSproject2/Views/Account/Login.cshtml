@@ -1,0 +1,31 @@
+﻿@model LoginViewModel//Объявление наследования модели
+@{ 
+    ViewBag.Title= "Авторизация";
+}
+
+<div>
+    <h1>Вход в личный кабинет</h1>
+    <div class="div-box">
+        <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+            <div asp-validation-summary="All"></div>
+            <div>
+                <h2><label asp-for="UserName"></label></h2>
+                <input asp-for="UserName" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div>
+                <h2><label asp-for="Password"></label></h2>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <h2><label asp-for="RememberMe"></label></h2>
+                <input asp-for="RememberMe" />
+                <span asp-validation-for="RememberMe"></span>
+            </div>
+            <div>
+                <input type="submit" value="Войти" class="btn btn-info"/>
+            </div>
+        </form>
+    </div>
+</div>
